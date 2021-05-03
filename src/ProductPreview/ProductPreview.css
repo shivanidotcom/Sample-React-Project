@@ -1,0 +1,107 @@
+/**product-preview*/
+.product-preview{
+    width: 50%;
+    position: relative;
+  }
+  .product-preview img{
+    width: 100%;
+  }
+  #featureDate{
+    position: absolute;
+    top: 50%;
+    left: 38%; 
+    color: white;
+    font-size: bold;
+    font-size: 40px;
+  }
+  @media (min-width: 350px) { 
+    #featureDate{
+     top: 21%;
+     left: 39%;
+     font-size: 15px;
+    }
+}
+/* medium size devices*/
+@media (min-width: 600px) { 
+ #featureDate{
+    top: 33%;
+    left: 39%;
+    font-size: 22px;
+
+ }
+}
+@media (min-width: 800px) { 
+ #featureDate{
+   top: 35%;
+   left: 41%;
+   font-size: 23px;
+
+ }
+}
+
+@media (min-width: 1000px) { 
+ #featureDate{
+   top: 35%;
+   left: 42%;
+   font-size: 40px;
+
+ }
+}
+  /** heart beat section*/
+  .heartbeatsection{
+    position: absolute;
+    top:35%;
+    left: 47%;
+    color: red;
+    font-size: 40px;
+    animation: beat 1s infinite;
+  }
+  /* Small devices (tablets, 768px and up) */
+@media (min-width: 350px) { 
+     .heartbeatsection{
+      top: 21%;
+      left: 44%;
+      font-size: 15px;
+     }
+ }
+ /* medium size devices*/
+ @media (min-width: 600px) { 
+  .heartbeatsection{
+    top: 32%;
+    left: 44%;
+    font-size: 15px;
+
+  }
+}
+@media (min-width: 800px) { 
+  .heartbeatsection{
+    top: 35%;
+    left: 47%;
+    font-size: 23px;
+
+  }
+}
+
+@media (min-width: 1000px) { 
+  .heartbeatsection{
+    top: 35%;
+    left: 47%;
+    font-size: 40px;
+
+  }
+}
+
+
+
+  /** heart beat anime*/
+  @keyframes beat{
+    0%{
+      transform: scale(1,1);
+    }
+    50%{
+      transform: scale(1.2 ,1.2 );
+    }
+    100%{
+      transform: scale(1,1);
+    }
+  }

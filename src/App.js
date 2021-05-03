@@ -1,25 +1,54 @@
-import logo from './logo.svg';
 import './App.css';
+import ProductPreview from './ProductPreview/ProductPreview';
+import ProductDetailsData from './ProductDetails/ProductDetailsData';
+import TopBar from './TopBar/TopBar';
+import React from 'react';
+import ProductData from './ProductData/productdata';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+  state={
+    productdata : ProductData,
+    currentImage : "https://imgur.com/iOeUBV7.png",
+    showHeartBeat : false      
+  }
+  /** on color button click  */
+  onColorButtonClick=(pos)=>{
+    const updatedProductImage = this.state.productdata.colorOptions[pos].imageUrl;
+    console.log(updatedProductImage);
+    this.setState({currentImage : updatedProductImage });
+
+  }
+  /**to get the heart beat or time  */
+  onClickGetHeartbeat=(pos)=>{
+    let updatedValue= false;
+    console.log(updatedValue);
+    if (pos === 1){
+      updatedValue =true;
+    }
+    this.setState({showHeartBeat : updatedValue})
+  }
+  render() {
+    return (
+      
+        <div className="App">
+          <header className="App-header">
+                  <TopBar/>
+               <div className="main-container">
+                 <div className="product-preview" >
+                    <ProductPreview currentImage={this.state.currentImage} showHeartBeat={this.state.showHeartBeat}/>
+                 </div>
+                  <ProductDetailsData data={this.state.productdata}
+                                      onColorButtonClick={this.onColorButtonClick}
+                                      onClickGetHeartbeat={this.onClickGetHeartbeat}
+                  />
+               </div>
+    
+          </header>
+        </div>
+      
+    );
+  }
+ 
 }
 
 export default App;
